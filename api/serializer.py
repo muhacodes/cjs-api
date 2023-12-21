@@ -69,7 +69,7 @@ class OptionsSerializer(serializers.ModelSerializer):
 class UserSerializerModel(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, validators=[validate_password])
 
-    favorite = MenuItemSerializer(many=True)
+    favorite = MenuItemSerializer(many=True, read_only=True)
     
     class Meta:
         model = User
