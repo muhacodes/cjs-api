@@ -212,7 +212,7 @@ class ApiLogin(ObtainAuthToken):
 
                 # Create a new token for the user with an expiry time
                 token = Token.objects.create(user=user)
-                expiry_time = timezone.now() + timezone.timedelta(minutes=1) # Change this to 2 hours for production
+                expiry_time = timezone.now() + timezone.timedelta(minutes=30) # Change this to 2 hours for production
                 token.expires = expiry_time
                 token.save()
 
