@@ -73,7 +73,7 @@ class PostOrder(generics.CreateAPIView):
             address=validated_data['address'],
             total=validated_data['total'],
             quantity=validated_data['quantity'],
-            # user=user
+            user=validated_data['user']
         )
 
         for item in validated_data['item']:
